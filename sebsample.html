@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Amtrak</title>
+<!-- Bootstrap core CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M"
+crossorigin="anonymous">
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+<script>
+    $(document).ready(function () {
+        $("#bigsale").click(function () {
+          $("#bigsale").hide()
+          $("#message").text("50% OFF!")
+          $("#message").css({
+            "color": "white",
+            "font-size": "25px",
+          });
+        });
+    });
+
+    $(document).ready(function () {
+        $("#bigger").click(function () {
+          $("#big").text("90% OFF!")
+          $("#bigger").text("Click here to book!")
+        });
+    });
+
+    $(document).ready(function () {
+        $("#denver").click(function () {
+          $("#available").text("NOT AVAILABLE!")
+          $("#available").css("background-color", "red")
+        });
+    });
+
+    $(document).ready(function () {
+        $("#phoenix").click(function () {
+          $("#close").text("AVAILABLE!")
+          $("#close").css("background-color", "green")
+        });
+    });
+
+    $(document).ready(function () {
+        $("#seattle").click(function () {
+          $("#open").text("AVAILABLE!")
+          $("#open").css("background-color", "green")
+        });
+    });
+
+    $(document).ready(function () {
+           $("#seattle").click(function () {
+            var notes = {
+              "Destination": "Seattle, WA",
+              "Travel": "2h 45m",
+              "Taxes": "10%",
+            }
+               setTimeout(function () {
+                    alert(" Destination: " + notes.Destination + " Travel: " + notes.Travel + " Taxes: " + notes.Taxes); }, 1000);
+           });
+       });
+
+    $(document).ready(function () {
+        $("#purchase").click(function () {
+          $("#new").text("NOW AVAILABLE!")
+          $("#new").css({
+            "color": "white",
+            "font-size": "25px",
+            "text-align": "center",
+            "background-color": "black",
+          });
+        });
+    });
+
+var price=25;
+var tax=0.09;
+var hotel=70;
+var trans=20;
+var food=65;
+
+price = price (price + hotel + trans +food);
+price = price + (price * tax);
+    
+</script>
+
+</head>
+
+<link rel="stylesheet" type="text/css" href="../HTML Files/sample/style.css">
+
+<body id="notes">
+
+<div class="header">
+  <h1>AMTRAK</h1>
+</div>
+
+<div class="row">
+
+<div class="col-3 col-m-3 menu">
+  <ul>
+    <a style="color: white;" href="file:///Users/andykollath/Desktop/schedule/yourtrip.html"><li>Your Trip</li></a>
+    <li>About Denver</li>
+    <li>About Phoenix</li>
+    <li>About Seattle</li>
+    <li>Where To Shop</li>
+    <li>Where To Eat</li>
+  </ul>
+</div>
+
+<div class="col-6 col-m-9" style="border: 5px outset white; margin-top: 15px; height: 335px;">
+   <div class="container">
+      <h2>UPCOMING TRIPS</h2>            
+      <table class="table">
+        <thead>
+          <tr>
+            <th style="background-color: black;">Destination</th>
+            <th style="background-color: black;">Price</th>
+            <th style="background-color: black;">Availability</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Denver, CO</td>
+            <td id="available">$50.00</td>
+            <td><button id="denver" type="button" class="btn btn-dark">Check Availability!</button></td>
+          </tr>
+          <tr>
+            <td>Phoenix, AZ</td>
+            <td id="close">$50.00</td>
+            <td><button id="phoenix" id="click" type="button" class="btn btn-dark">Check Availability!</button></td>
+          </tr>
+          <tr>
+            <td>Seattle, WA</td>
+            <td id="open">$50.00</td>
+            <td><button id="seattle" id="click" type="button" class="btn btn-dark">Check Availability!</button></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+<div class="col-3 col-m-12">
+  <div class="aside">
+    <h3 id="sale">OCTOBER SALE</h3>
+    <p id="message"></p>
+    <button id="bigsale">Click here for pricing!</button>
+    <h4 id="big">NOVEMBER SALE</h4>
+    <p></p>
+    <button id="bigger">Click here for pricing!</button>
+    <h4 id="sale">DECEMBER SALE</h4>
+    <p id="message"></p>
+    <button id="bigsale">Click here for pricing!</button>
+  </div>
+</div>
+
+<div id="new" class="col-9 col-m-9" style="border: 5px outset white; margin-left: 165px;">
+    <p style="text-align: center; color:white; font-size: 25 px; font-family:georgia;">We are now selling tickets for our first trips from Omaha, Nebraska to Denver, Colorado, Phoenix, AZ, as well as Seattle, WA. Tickets start at a low price of $50.00 per round trip. Don't miss out on this trip to the mountains!</p>
+    <button id="purchase" type="button" style="margin-left:380px;" class="btn btn-dark btn-lg">Purchase Tickets</button>
+  </div>
+
+</div>
+
+<div id="draggable" class="footer">
+  <p style="font-family: georgia; font-size: 25px; padding-top:10px; color: black;"><a style="text-decoration: none; color:black;" href="https://www.google.com/maps/place/1500+Davenport+St,+Omaha,+NE+68102/data=!4m2!3m1!1s0x87938fb3a51ddc59:0xae65505c10501cc?sa=X&ved=0ahUKEwjtyKftwIrXAhWF64MKHcUCD3UQ8gEIJTAA">1500 DAVENPORT ST. OMAHA, NE 68102</a> | 402-123-4567 | <a style= "color: black;" href=mailto:trains@amtrak.com>TRAINS@AMTRAK.COM</a></p>
+</div>
+
+</body>
+</html>
